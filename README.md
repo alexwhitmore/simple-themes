@@ -2,9 +2,12 @@
 
 Drop in dark mode with 2 lines of code with `prefers-color-scheme` and no flash of unstyled content (FOUC)!
 
-## Set up
+> [!WARNING]
+> This project is a WIP, and should not be used in a production environment yet.
 
-CDN link to NPM package
+## HTML Set up
+
+CDN link to be used in your project
 
 ```html
 <script src="
@@ -12,9 +15,8 @@ https://cdn.jsdelivr.net/npm/simple-themes@0.0.1/src/theme-toggle.min.js
 "></script>
 ```
 
+index.html
 ```html
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,8 +33,8 @@ https://cdn.jsdelivr.net/npm/simple-themes@0.0.1/src/theme-toggle.min.js
 </html>
 ```
 
+styles.css
 ```css
-/* styles.css */
 :root,
 html[data-theme='light'] {
   background-color: white;
@@ -45,4 +47,36 @@ html[data-theme='dark'] {
 }
 ```
 
-This project has so far only best tested in Astro and HTML apps.
+## [Astro](https://github.com/withastro/astro) Set Up
+
+src/pages/index.astro
+```astro
+---
+import '../styles/globals.css'
+---
+
+<html lang="en">
+  <head>
+    <script is:inline src="
+https://cdn.jsdelivr.net/npm/whitmore-toggle@1.0.34/src/theme-toggle.min.js
+"></script>
+  </head>
+  <body>
+    <button id="theme-btn">Click me</button>
+  </body>
+</html>
+```
+
+src/styles/globals.css
+```css
+:root,
+html[data-theme='light'] {
+  background-color: white;
+  color: black;
+}
+
+html[data-theme='dark'] {
+  background-color: black;
+  color: white;
+}
+```
