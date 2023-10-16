@@ -1,5 +1,5 @@
 module.exports = {
-  testEnvironment: 'jest-environment-jsdom', // update this line
+  testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/*.test.js'],
   setupFilesAfterEnv: ['./jest.setup.js'],
 }
