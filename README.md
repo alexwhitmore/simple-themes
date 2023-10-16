@@ -57,12 +57,12 @@ import '../styles/globals.css'
 
 <html lang="en">
   <head>
-    <script is:inline src="
-https://cdn.jsdelivr.net/npm/whitmore-toggle@1.0.34/src/theme-toggle.min.js
+    <script src="
+https://cdn.jsdelivr.net/npm/simple-themes@0.0.1/src/theme-toggle.min.js
 "></script>
   </head>
   <body>
-    <button id="theme-btn">Click me</button>
+    <button id="theme-btn">Toggle Theme</button>
   </body>
 </html>
 ```
