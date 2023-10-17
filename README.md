@@ -57,7 +57,7 @@ import '../styles/globals.css'
 
 <html lang="en">
   <head>
-    <script src="
+    <script is:inline src="
 https://cdn.jsdelivr.net/npm/simple-themes@0.0.1/src/theme-toggle.min.js
 "></script>
   </head>
