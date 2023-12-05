@@ -1,18 +1,24 @@
 version: 2.1
 
 jobs:
-  my-job:
+  build:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:14
+    working_directory: ~/app
     steps:
       - checkout
-      - when:
-          condition:
-            equal: [ main, << pipeline.git.branch >> ]
-          steps:
-            - run: echo "I am on main"
-
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run Tests
+          command: npm test
 workflows:
-  my-workflow:
+  version: 2
+  build:
     jobs:
-      - my-job
+      - build:
+          filters:
+            branches:
+              only:
+                - main
