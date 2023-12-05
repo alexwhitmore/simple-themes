@@ -80,5 +80,3 @@ html[data-theme='dark'] {
   color: white;
 }
 ```
-
-Test commit
