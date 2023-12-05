@@ -58,4 +58,4 @@ window
   })
 
 // Commenting out because it's causing a failure in Astro
-// export { getPreferTheme, setPreference, themeValue }
+export { getPreferTheme, setPreference, themeValue }
