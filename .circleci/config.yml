@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: cimg/node:21.3.0
     working_directory: ~/app
+    parallelism: 2
     steps:
       - checkout
       - run:
@@ -12,7 +13,7 @@ jobs:
           command: npm install
       - run:
           name: Run Tests
-          command: npm test
+          command: npm test -- --maxWorkers=2
       - store_test_results:
           path: test-results
       - store_artifacts:
